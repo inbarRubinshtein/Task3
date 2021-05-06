@@ -69,16 +69,16 @@ def creat_data(chat_text): #creating the data chat
 
 
 def creat_output(data):    #Create a file with the data
-    info = json.dumps(data)
+    info = json.dumps(data,ensure_ascii = False)
     file_name=data["metadata"]["chat_name"]+".txt"
-    f = open(file_name, "w")
+    f = open(file_name, "w",encoding= "utf-8")
     f.write(info)
     f.close() 
 
 
 ###  MAIN
 #Import text
-path_chat_WhatsApp="C:/Users/inbar/Desktop/Third_year/Second_Semester/Knowledge_data_engineering/Task/task3/files/WhatsApp יום הולדת בנות לנוי'ה.txt"#input("Enter your path:")
+path_chat_WhatsApp="C:/Users/inbar/Desktop/Third_year/Second_Semester/Knowledge_data_engineering/Task/task3/files/WhatsAppגאונים לכאן.txt"#input("Enter your path:")
 chat_text = open(path_chat_WhatsApp,"r",encoding= "utf-8")
 
 
